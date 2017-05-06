@@ -9,6 +9,7 @@ var Ω = console.log;
 
 assert.notEqual(typeof(process.env.ETH_NODE),'undefined');
 
+// var ticket_address        = '0xb9af8aa42c97f5a1f73c6e1a683c4bf6353b83e8';
 var creator               = process.env.ETH_CREATOR_ADDRESS;
 var ledgerContractAddress = process.env.CONTRACT_ADDRESS;
 var contract = '';
@@ -63,7 +64,7 @@ SellTicket = (contract,ticket_address,cb)=> {
      var params   = { from: creator, gas: 2000000 };
      contract.sellticket(ticket_address, params, (err,res)=>{
           if(err) { return cb(err)}
-          return cb(null, res)
+          return cb(null,res)
      });
 };
 
@@ -73,13 +74,6 @@ call_API_method = (func)=>(ticket_address,cb)=>{
           func(contract, ticket_address, cb)
      });
 };
-
-
-exports.IsTicketSold    = IsTicketSold
-exports.SellTicket      = SellTicket
-exports.call_API_method = call_API_method
-
-
 
 // '0xb9af8aa42c97f5a1f73c6e1a683c4bf6353b83e8'
 
