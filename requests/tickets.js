@@ -2,7 +2,7 @@
 app.get('/api/v1/ticket/:address/sell', (req,res,next)=> {
 	contracts.call_API_method(SellTicket)(req.params.address, (err,ans)=>{
 		if (err){ res.sendStatus(401) }
-		else  res.sendStatus(201);
+		else  res.json(ans);
 	})
 });
 

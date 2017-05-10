@@ -7,7 +7,7 @@ var BigNumber = require('bignumber.js');
 
 var Ω = console.log;
 
-assert.notEqual(typeof(process.env.ETH_NODE),'undefined');
+// assert.notEqual(typeof(process.env.ETH_NODE),'undefined');
 
 var creator               = process.env.ETH_CREATOR_ADDRESS;
 var ledgerContractAddress = process.env.CONTRACT_ADDRESS;
@@ -27,9 +27,9 @@ deployMain=(creator,ledgerAbi,ledgerBytecode,cb)=> {
 }
 
 getContractAbi=(cName)=> (filename)=> (cb)=> fs.readFile(filename, (err, res)=>{ 
-     assert.equal(err,null);
+     // assert.equal(err,null);
      var source = res.toString();
-     assert.notEqual(source.length,0);
+     // assert.notEqual(source.length,0);
      var output   = solc.compile(source, 1);
      var abi      = JSON.parse(output.contracts[cName].interface);
      var bytecode = output.contracts[cName].bytecode;
@@ -63,7 +63,11 @@ SellTicket = (contract,ticket_address,cb)=> {
      var params   = { from: creator, gas: 2000000 };
      contract.sellticket(ticket_address, params, (err,res)=>{
           if(err) { return cb(err)}
-          return cb(null, res)
+          var out = {
+               tx: res,
+               txLink: 'https://kovan.etherscan.io/tx/'+res
+          }
+          return cb(null, out)
      });
 };
 

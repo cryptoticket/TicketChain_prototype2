@@ -5,10 +5,11 @@
   "main": "main.js",
   "scripts": {
     "test": "mocha --reporter spec -t 10000",
-    "kovan": "env SMART_CONTRACTS_ENABLED=true CONTRACT_ADDRESS=0x92791f7B25cEF968223e7b82CE015470D59BA6d7 ETH_NODE=http://ethnode.chain.cloud:8545 ETH_CREATOR_ADDRESS=0xb9Af8aA42c97f5A1F73C6e1a683c4Bf6353B83E7 node main.js",
+    "kovan": "env SMART_CONTRACTS_ENABLED=true CONTRACT_ADDRESS=0x4b6ab3dbef5715b34ae2fd9cdb2be88161ab624e ETH_NODE=http://ethnode.chain.cloud:8545 ETH_CREATOR_ADDRESS=0xb9Af8aA42c97f5A1F73C6e1a683c4Bf6353B83E7 node main.js",
     "start": "node main.js"
   },
   "dependencies": {
+    "assert": "^1.4.1",
     "async": "^2.0.0-rc.3",
     "bcrypt": "^0.8.5",
     "bignumber.js": "^3.0.1",
@@ -33,6 +34,7 @@
     "line-by-line": "^0.1.5",
     "line-reader": "^0.4.0",
     "method-override": "^2.3.5",
+    "mocka": "0.0.1",
     "nconf": "^0.8.4",
     "nodemailer": "^0.7.1",
     "querystring": "^0.2.0",
