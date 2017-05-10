@@ -4,16 +4,16 @@ contract TicketLedger {
 
 	address public  creator = 0x0;
 
-	mapping (address => bool) tickets;
+	mapping (string => bool) tickets;
 
-	function sellticket(address num) {
+	function sellticket(string num) {
 		tickets[num] = true;
 	}
 
-	function isticketsold(address num) constant returns (bool){
-		// out = (tickets[num] == true);
-		return tickets[num];
+	function isticketsold(string num) constant returns (bool){
+          // TODO: check num format here
 
+		return tickets[num];
 	}
 
 	function TicketLedger(){
