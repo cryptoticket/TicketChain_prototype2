@@ -34,7 +34,6 @@ getContractAbi=(cName)=> (filename)=> (cb)=> fs.readFile(filename, (err, res)=>{
      var abi      = JSON.parse(output.contracts[cName].interface);
      var bytecode = output.contracts[cName].bytecode;
      return cb(null,abi,bytecode);
-
 });
 
 Create =(cb)=>{
@@ -68,6 +67,8 @@ SellTicket = (contract,ticket_address,cb)=> {
 };
 
 call_API_method = (func)=>(ticket_address,cb)=>{
+     // TODO: perf.issue -> this is very slow
+     // each time it reads and compiles
      getContractAbi(':TicketLedger')('./contracts/TicketLedger.sol')((err,ledgerAbi,ledgerBytecode)=> {
           contract = web3.eth.contract(ledgerAbi).at(ledgerContractAddress);
           func(contract, ticket_address, cb)
