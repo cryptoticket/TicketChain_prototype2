@@ -9,6 +9,7 @@
     "start": "node main.js"
   },
   "dependencies": {
+    "assert": "^1.4.1",
     "async": "^2.0.0-rc.3",
     "bcrypt": "^0.8.5",
     "bignumber.js": "^3.0.1",
@@ -33,6 +34,7 @@
     "line-by-line": "^0.1.5",
     "line-reader": "^0.4.0",
     "method-override": "^2.3.5",
+    "mocka": "0.0.1",
     "nconf": "^0.8.4",
     "nodemailer": "^0.7.1",
     "querystring": "^0.2.0",

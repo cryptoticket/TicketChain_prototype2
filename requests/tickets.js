@@ -1,10 +1,9 @@
 
 app.get('/api/v1/ticket/:address/sell', (req,res,next)=> {
-     contracts.call_API_method(SellTicket)(req.params.address, (err,ans)=>{
-          if (err){ return res.sendStatus(401) }
-
-          res.sendStatus(201);
-     });
+	contracts.call_API_method(SellTicket)(req.params.address, (err,ans)=>{
+		if (err){ res.sendStatus(401) }
+		else  res.json(ans);
+	})
 });
 
 app.get('/api/v1/ticket/:address', (req,res,next)=> {
