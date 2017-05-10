@@ -10,7 +10,7 @@ Run ```npm run kovan```
 ## How to run on Heroku
 1. Deploy to Heroku
 2. Select 'nodejs' buildpack
-3. Set SMART_CONTRACTS_ENABLED, ETH_NODE, ETH_CREATOR_ADDRESS, CONTRACT_ADDRESS env.vard
+3. Set SMART_CONTRACTS_ENABLED, ETH_NODE, ETH_CREATOR_ADDRESS, CONTRACT_ADDRESS environment variables.
 
 ## API description is here
 [http://docs.ticketchain2.apiary.io/#](http://docs.ticketchain2.apiary.io/#)
