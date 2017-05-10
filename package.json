@@ -1,11 +1,11 @@
 {
   "name": "ticketchain_prototype2",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This is a simple prototype #2 for TicketsCloud company",
   "main": "main.js",
   "scripts": {
     "test": "mocha --reporter spec -t 10000",
-    "kovan": "env SMART_CONTRACTS_ENABLED=true CONTRACT_ADDRESS=0x92791f7B25cEF968223e7b82CE015470D59BA6d7 ETH_NODE=http://ethnode.chain.cloud:8545 ETH_CREATOR_ADDRESS=0xb9Af8aA42c97f5A1F73C6e1a683c4Bf6353B83E7 node main.js",
+    "kovan": "env SMART_CONTRACTS_ENABLED=true CONTRACT_ADDRESS=0x4b6AB3DbEF5715B34ae2FD9Cdb2Be88161AB624E ETH_NODE=http://ethnode.chain.cloud:8545 ETH_CREATOR_ADDRESS=0xb9Af8aA42c97f5A1F73C6e1a683c4Bf6353B83E7 node main.js",
     "start": "node main.js"
   },
   "dependencies": {

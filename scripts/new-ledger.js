@@ -45,7 +45,7 @@ Create =(cb)=>{
           getContractAbi(':TicketLedger')('./contracts/TicketLedger.sol')((err,ledgerAbi,ledgerBytecode)=> {
                console.log('got contract abi')
                deployMain(creator,ledgerAbi,ledgerBytecode, (err,res)=>{
-                    console.log('deployed: '+res )
+                    console.log('TX ID: '+res )
                     if(err) { return cb(err)}
                     return cb(null,res)
                })
@@ -74,6 +74,10 @@ call_API_method = (func)=>(ticket_address,cb)=>{
           func(contract, ticket_address, cb)
      });
 };
+
+Create((err,res)=>{
+     
+});
 
 // '0xb9af8aa42c97f5a1f73c6e1a683c4bf6353b83e8'
 
